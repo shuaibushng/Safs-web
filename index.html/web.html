@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Safs Electrical | Installations &amp; Repairs</title>
+  <style>
+    :root {
+      --ink: #142126;
+      --muted: #607076;
+      --paper: #f6f5f0;
+      --lime: #d9f36a;
+      --line: #dfe3dd;
+      --navy: #102329;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Arial, Helvetica, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.55;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1160px, calc(100% - 48px)); margin: auto; }
+    header { background: var(--paper); }
+    .nav {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: -.04em;
+    }
+    .brand-mark, .mark {
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--lime);
+      font-size: 19px;
+    }
+    .navlinks { display: flex; gap: 32px; color: #46575c; font-size: 14px; }
+    .nav-actions { display: flex; align-items: center; gap: 16px; }
+    .nav-cta {
+      border: 1px solid var(--ink);
+      padding: 11px 17px;
+      border-radius: 3px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .textlink { font-size: 13px; font-weight: 700; }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.03fr .97fr;
+      align-items: center;
+      gap: 54px;
+      padding: 74px 0 82px;
+    }
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #586a6e;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { width: 26px; height: 2px; background: #9bb629; content: ""; }
+    .hero h1 {
+      max-width: 650px;
+      margin: 22px 0 24px;
+      font: 400 clamp(50px, 6.1vw, 78px)/.99 var(--serif);
+      letter-spacing: -.055em;
+    }
+    .hero h1 em { color: #758b2f; }
+    .intro { max-width: 490px; margin: 0 0 30px; color: var(--muted); font-size: 17px; }
+    .actions { display: flex; align-items: center; gap: 20px; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+      padding: 16px 21px;
+      border-radius: 3px;
+      background: var(--navy);
+      color: white;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .hero-note { display: flex; align-items: center; gap: 12px; margin-top: 38px; color: #68777a; font-size: 12px; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: #85aa32; box-shadow: 0 0 0 4px #e4edc9; }
+
+    .visual { position: relative; height: 490px; overflow: hidden; background: #c9d4ce; }
+    .visual::before {
+      position: absolute;
+      z-index: 1;
+      inset: 0;
+      background: linear-gradient(160deg, transparent 43%, rgba(11,28,32,.62));
+      content: "";
+    }
+    .visual img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .visual-label { position: absolute; z-index: 2; bottom: 24px; left: 25px; color: white; font: 23px var(--serif); }
+    .visual-label small { display: block; margin-bottom: 7px; color: #e0e8dc; font: 11px var(--sans); letter-spacing: .13em; text-transform: uppercase; }
+    .badge { position: absolute; z-index: 2; top: 20px; right: 20px; padding: 15px 17px; background: var(--lime); font-size: 11px; font-weight: 800; text-transform: uppercase; transform: rotate(3deg); }
+
+    .trust { border-block: 1px solid var(--line); background: #e9ebe4; }
+    .trust-row { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 88px; }
+    .trust-intro { font: 18px var(--serif); }
+    .trust-item { display: flex; align-items: center; gap: 9px; color: #455459; font-size: 12px; font-weight: 700; }
+    .check { color: #789528; font-size: 18px; }
+
+    .section { padding: 94px 0; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 38px; }
+    .section h2 { max-width: 550px; margin: 16px 0 0; font: 400 clamp(38px, 4.8vw, 57px)/1.02 var(--serif); letter-spacing: -.045em; }
+    .section-head p { max-width: 340px; margin: 0; color: var(--muted); font-size: 14px; }
+    .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .service { min-height: 226px; padding: 28px; border: 1px solid #e7e9e4; background: white; }
+    .service-num { color: #80952c; font-size: 11px; font-weight: 800; letter-spacing: .1em; }
+    .service h3 { margin: 26px 0 9px; font: 25px var(--serif); }
+    .service p { margin: 0; color: var(--muted); font-size: 13px; }
+    .service .arrow { float: right; color: #829638; font-size: 20px; }
+
+    .band { padding: 66px 0; background: var(--navy); color: white; }
+    .band-row { display: flex; align-items: center; justify-content: space-between; gap: 35px; }
+    .band h2 { max-width: 530px; margin: 0; font: 400 42px/1.08 var(--serif); }
+    .band p { max-width: 390px; margin: 12px 0 0; color: #b9c7c5; font-size: 14px; }
+    footer { padding: 25px 0; color: #647277; font-size: 12px; }
+    .footer-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer-brand { color: var(--ink); font-size: 15px; font-weight: 800; }
+    .footer-links { display: flex; gap: 22px; }
+
+    @media (max-width: 780px) {
+      .wrap { width: min(100% - 36px, 600px); }
+      .nav { height: 70px; }
+      .navlinks { display: none; }
+      .nav-actions { gap: 10px; }
+      .nav-cta { padding: 10px 12px; }
+      .hero { grid-template-columns: 1fr; gap: 36px; padding: 52px 0 55px; }
+      .hero h1 { font-size: 58px; }
+      .visual { height: 360px; }
+      .trust-row { flex-wrap: wrap; justify-content: flex-start; gap: 14px 24px; padding: 20px 0; }
+      .trust-intro { width: 100%; }
+      .section { padding: 68px 0; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 18px; }
+      .services { grid-template-columns: 1fr; }
+      .service { min-height: 185px; }
+      .service h3 { margin-top: 17px; }
+      .band-row { display: block; }
+      .band h2 { font-size: 37px; }
+      .footer-row { align-items: flex-start; flex-direction: column; }
+      .footer-links { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top"><span class="brand-mark">ϟ</span> Safs Electrical installation</a>
+      <nav class="navlinks" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#about">Safs</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="textlink" href="index.html">Log Out!</a>
+        <a class="nav-cta" href="#contact">Get a quote ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="wrap hero">
+      <div>
+        <div class="eyebrow">Electrical work, done right</div>
+        <h1>Powering the places <em>you call home.</em></h1>
+        <p class="intro">Dependable electrical installation and repairs for homes and businesses. Clear advice, careful workmanship, and a tidy finish.</p>
+        <div class="actions">
+          <a class="button" href="#contact">Request a quote ↗</a>
+          <a class="textlink" href="#services">Explore services ↓</a>
+        </div>
+        <div class="hero-note"><span class="dot"></span> Here to help with your next electrical project</div>
+      </div>
+      <div class="visual">
+        <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Electrician working on an electrical installation">
+        <div class="badge">Safe work<br>Clear quotes</div>
+        <div class="visual-label"><small>Homes · Shops · Offices</small>Good work you can feel good about.</div>
+      </div>
+    </section>
+
+    <div class="trust">
+      <div class="wrap trust-row">
+        <div class="trust-intro">A brighter, safer space starts here.</div>
+        <div class="trust-item"><span class="check">✓</span> Installations &amp; upgrades</div>
+        <div class="trust-item"><span class="check">✓</span> Repairs &amp; troubleshooting</div>
+        <div class="trust-item"><span class="check">✓</span> Residential &amp; commercial</div>
+      </div>
+    </div>
+
+    <section class="wrap section" id="services">
+      <div class="section-head">
+        <div><div class="eyebrow">What we do</div><h2>Electrical help for every kind of space.</h2></div>
+        <p>From a small repair to a full installation, get practical service tailored to your property and plans.</p>
+      </div>
+      <div class="services">
+        <article class="service"><span class="service-num">01 / INSTALL</span><span class="arrow">↗</span><h3>New installations</h3><p>Lighting, sockets, wiring and electrical fit-outs for new spaces and renovations.</p></article>
+        <article class="service"><span class="service-num">02 / UPGRADE</span><span class="arrow">↗</span><h3>Upgrades &amp; improvements</h3><p>Modernise your electrical setup with thoughtful upgrades made for the way you live and work.</p></article>
+        <article class="service"><span class="service-num">03 / REPAIR</span><span class="arrow">↗</span><h3>Repairs &amp; fault finding</h3><p>Get help tracking down electrical issues and restoring things to proper working order.</p></article>
+      </div>
+    </section>
+
+    <section class="band" id="about">
+      <div class="wrap band-row">
+        <div><div class="eyebrow" style="color:#d9f36a">The Brightline difference</div><h2>Good service should feel straightforward.</h2></div>
+        <p>We listen, explain the options in plain language, and treat your space with care. You’ll know what the work involves before we get started.</p>
+      </div>
+    </section>
+
+    <section class="wrap section" id="contact">
+      <div class="section-head">
+        <div><div class="eyebrow">Let’s get started</div><h2>Tell us what you need.</h2></div>
+        <p>Share a little about your project and we’ll get back to you to discuss next steps.</p>
+      </div>
+      <a class="button" href="mailto:hello@brightline.example?subject=Electrical%20work%20enquiry">Email for a quote ↗</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <div class="footer-brand">Safs Electrical</div>
+      <div>Electrical installation &amp; repairs · Your area</div>
+      <div class="footer-links"><a href="#services">Services</a><a href="#contact">Get in touch</a></div>
+      <div>© <span id="year"></span> Safs Electrical installation</div>
+    </div>
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
